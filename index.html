@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Check live foreign currency exhange rates</h1>
+      <div class="main">
+        <div class="wrapper">
+          <div class="tabs">
+            <div class="tab active" data-tab="convert">
+              <div class="tab-icon">
+                <svg
+                  fill="#fff"
+                  height="18px"
+                  width="18px"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 423.755 423.755"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M43.84,281.457c-18.585-44.869-18.586-94.29,0-139.159c10.649-25.709,26.678-48.152,46.86-66.135l60.86,60.86V15.099
+                 H29.635l39.88,39.88c-64.293,58.426-88.5,153.2-53.391,237.959c14.167,34.202,37.07,64.159,66.234,86.634
+                 c28.275,21.789,61.873,36.201,97.162,41.677l4.601-29.646C120.778,381.774,68.337,340.597,43.84,281.457z"
+                    />
+                    <path
+                      d="M407.516,292.938c21.652-52.272,21.652-109.848,0-162.12c-14.167-34.202-37.071-64.159-66.234-86.633
+                 C313.007,22.395,279.409,7.983,244.12,2.507l-4.601,29.646c63.342,9.829,115.783,51.005,140.28,110.146
+                 c18.586,44.869,18.586,94.29,0,139.159c-10.649,25.709-26.678,48.152-46.859,66.135l-60.86-60.86v121.924h121.924l-39.801-39.801
+                 C377.118,348.099,395.334,322.348,407.516,292.938z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="tab-title">Convert</div>
+            </div>
+            <div class="tab" data-tab="single">
+              <div class="tab-icon">
+                <svg
+                  width="18px"
+                  height="18px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M12 6V18"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="tab-title">Single</div>
+            </div>
+          </div>
+          <div class="content show" data-child="convert">
+            <form class="form">
+              <div class="form-inputs">
+                <div class="form-group">
+                  <label for="amount">Amount</label>
+                  <input
+                    type="number"
+                    name="amount"
+                    id="amount"
+                    placeholder="1.00"
+                    required
+                  />
+                </div>
+                <div class="form-selects">
+                  <div class="form-select">
+                    <label for="from">From</label>
+                    <select class="select" name="from" id="from" required>
+                      <option disabled value="" selected hidden>
+                        Choose currency
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-select_icon switch-currencies">
+                    <svg
+                      fill="#fff"
+                      height="24px"
+                      width="24px"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 477.427 477.427"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <polygon
+                          points="101.82,187.52 57.673,143.372 476.213,143.372 476.213,113.372 57.181,113.372 101.82,68.733 80.607,47.519 
+0,128.126 80.607,208.733 	"
+                        />
+                        <polygon
+                          points="396.82,268.694 375.607,289.907 420,334.301 1.213,334.301 1.213,364.301 420,364.301 375.607,408.694 
+396.82,429.907 477.427,349.301 	"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="form-select">
+                    <label for="to">To</label>
+                    <select class="select" name="to" id="to" required>
+                      <option disabled value="" selected hidden>
+                        Choose currency
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-info">
+                <div class="loader">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="form-results">
+                  <div class="form-result_item from" id="resultFrom"></div>
+                  <div class="form-result_equals">
+                    <svg
+                      fill="#fff"
+                      width="18px"
+                      height="18px"
+                      viewBox="0 0 256 256"
+                      id="Flat"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M220,160a4.0002,4.0002,0,0,1-8,8H40a4,4,0,0,1,0-8H216A4.0002,4.0002,0,0,1,220,160ZM40,100H216a4,4,0,0,0,0-8H40a4,4,0,0,0,0,8Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="form-result_item to" id="resultTo"></div>
+                </div>
+                <button type="submit" class="form-submit">Convert</button>
+              </div>
+              <div class="rate-information">
+                <div class="rate-conversion"></div>
+                <div class="rate-last"></div>
+              </div>
+            </form>
+          </div>
+          <div class="content" data-child="single">
+            <div class="currency-wrapper">
+              <div class="currency-single">
+                <select class="select" id="singleSelect">
+                  <option disabled value="" selected hidden>
+                    Choose currency
+                  </option>
+                </select>
+                <div class="currency-single_item"></div>
+              </div>
+              <div class="currency-list"></div>
+            </div>
+            <div class="currency-add">
+              <button class="currency-add_button">Add currency</button>
+              <select class="select" id="addCurrencySelect">
+                <option disabled value="" selected hidden>
+                  Choose currency
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/events.js"></script>
+  </body>
+</html>
