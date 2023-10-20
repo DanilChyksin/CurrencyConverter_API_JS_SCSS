@@ -250,7 +250,7 @@ h1 {
 @media screen and (max-width: 500px) {
   .form-select {
     flex-grow: 100%;
-    min-height: 40px;
+    min-height: 49px;
   }
 }
 .form-select_icon {
